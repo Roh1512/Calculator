@@ -1,4 +1,4 @@
-let num1 = null;
+  let num1 = null;
 let num2 = null;
 let operator = '';
 
@@ -7,8 +7,6 @@ let result = document.getElementById('result');
 //Listen for key press events
 window.addEventListener('keydown', (e) => {
   const key =  e.key;
-  console.log(key)
-  console.log(`Code:${e.code}`)
   if (!isNaN(key)){
     appendNumber(key);
   }else if (key === '+' || key === '-' || key === '*' || key === '/'){
@@ -23,30 +21,42 @@ window.addEventListener('keydown', (e) => {
 
   if(e.shiftKey && e.code === 'Digit8'){
     const keyButton = document.querySelector(`button[data-key = "*"]`);
+    if(keyButton) {
     keyButton.classList.add('playing');
+    }
   }else if(e.shiftKey && e.code === 'Equal'){
     const keyButton = document.querySelector(`button[data-key = "+"]`);
-    keyButton.classList.add('playing');
+    if(keyButton){
+      keyButton.classList.add('playing');
+    }
   }
   else {
   let keyCode = e.code;
   const keyButton = document.querySelector(`button[data-key = ${keyCode}]`);
-  keyButton.classList.add('playing');
+  if(keyButton){
+    keyButton.classList.add('playing');
+  }
   }
 });
 
 window.addEventListener('keyup', (e) => {
   if(e.shiftKey && e.code === 'Digit8'){
     const keyButton = document.querySelector(`button[data-key = "*"]`);
-    keyButton.classList.remove('playing');
+    if(keyButton){
+      keyButton.classList.remove('playing');
+    }
   }else if(e.shiftKey && e.code === 'Equal'){
     const keyButton = document.querySelector(`button[data-key = "+"]`);
-    keyButton.classList.remove('playing');
+    if(keyButton){
+      keyButton.classList.remove('playing');
+    }
   }
   else {
   let keyCode = e.code;
   const keyButton = document.querySelector(`button[data-key = ${keyCode}]`);
-  keyButton.classList.remove('playing');
+  if(keyButton){
+    keyButton.classList.remove('playing');
+  }
   }
 })
 
@@ -81,7 +91,6 @@ function resetCalc() {
 function equal() {
   if (num1,num2 !== null) {
     let answer = operate(num1,num2,operator);
-    console.log(answer)
     result.value = answer;
     num1 = result.value;
     num2 = 0;
