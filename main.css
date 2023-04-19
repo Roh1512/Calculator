@@ -90,3 +90,8 @@ body{
     transform: scale3d(0.8,0.8,0.8);
     transition: 0.3s;
 } 
+
+.playing {
+    transform: scale3d(0.8, 0.8, 0.8);
+    transition: 0.4s;
+}

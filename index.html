@@ -11,25 +11,25 @@
     <div class="calculatorBody">
         <div class="topScreen">
             <input type="text" id="result" readonly>
-            <button class="clear" id="clear" onclick="resetCalc()">C</button>
+            <button class="clear" id="clear" onclick="resetCalc()" data-key = "Backspace">C</button>
         </div>
         <div class="keypad">
-            <button onclick="appendNumber(9)">9</button>
-            <button onclick="appendNumber(8)">8</button>
-            <button onclick="appendNumber(7)">7</button>
-            <button onclick="appendOperator('+')">+</button>
-            <button onclick="appendNumber(4)">4</button>
-            <button onclick="appendNumber(5)">5</button>
-            <button onclick="appendNumber(6)">6</button>
-            <button onclick="appendOperator('-')">-</button>
-            <button onclick="appendNumber(3)">3</button>
-            <button onclick="appendNumber(2)">2</button>
-            <button onclick="appendNumber(1)">1</button>
-            <button onclick="appendOperator('/')">/</button>
-            <button onclick="appendDecimal('.')">.</button>
-            <button onclick="appendNumber(0)">0</button>
-            <button onclick="equal()">=</button>
-            <button onclick="appendOperator('*')">*</button>
+            <button class="button" onclick="appendNumber(9)" data-key = "Digit9">9</button>
+            <button onclick="appendNumber(8)" data-key = "Digit8">8</button>
+            <button onclick="appendNumber(7)" data-key = "Digit7">7</button>
+            <button onclick="appendOperator('+')" data-key = "+">+</button>
+            <button onclick="appendNumber(4)" data-key = "Digit4">4</button>
+            <button onclick="appendNumber(5)" data-key = "Digit5">5</button>
+            <button onclick="appendNumber(6)" data-key = "Digit4">6</button>
+            <button onclick="appendOperator('-')" data-key = "Minus">-</button>
+            <button onclick="appendNumber(3)" data-key = "Digit3">3</button>
+            <button onclick="appendNumber(2)" data-key = "Digit2">2</button>
+            <button onclick="appendNumber(1)" data-key = "Digit1">1</button>
+            <button onclick="appendOperator('/')" data-key = "Slash">/</button>
+            <button onclick="appendDecimal('.')" data-key = "Period">.</button>
+            <button onclick="appendNumber(0)" data-key = "Digit0">0</button>
+            <button onclick="equal()" data-key = "Enter">=</button>
+            <button onclick="appendOperator('*')" data-key = "*">*</button>
         </div>
     </div>
 

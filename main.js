@@ -4,12 +4,59 @@ let operator = '';
 
 let result = document.getElementById('result');
 
+//Listen for key press events
+window.addEventListener('keydown', (e) => {
+  const key =  e.key;
+  console.log(key)
+  console.log(`Code:${e.code}`)
+  if (!isNaN(key)){
+    appendNumber(key);
+  }else if (key === '+' || key === '-' || key === '*' || key === '/'){
+    appendOperator(key);
+  }else if (key === 'Enter' || key === 'Equal') {
+    equal();
+  }else if (key === '.') {
+    appendDecimal(key);
+  }else if (key === 'Backspace'){
+    resetCalc();
+  }
+
+  if(e.shiftKey && e.code === 'Digit8'){
+    const keyButton = document.querySelector(`button[data-key = "*"]`);
+    keyButton.classList.add('playing');
+  }else if(e.shiftKey && e.code === 'Equal'){
+    const keyButton = document.querySelector(`button[data-key = "+"]`);
+    keyButton.classList.add('playing');
+  }
+  else {
+  let keyCode = e.code;
+  const keyButton = document.querySelector(`button[data-key = ${keyCode}]`);
+  keyButton.classList.add('playing');
+  }
+});
+
+window.addEventListener('keyup', (e) => {
+  if(e.shiftKey && e.code === 'Digit8'){
+    const keyButton = document.querySelector(`button[data-key = "*"]`);
+    keyButton.classList.remove('playing');
+  }else if(e.shiftKey && e.code === 'Equal'){
+    const keyButton = document.querySelector(`button[data-key = "+"]`);
+    keyButton.classList.remove('playing');
+  }
+  else {
+  let keyCode = e.code;
+  const keyButton = document.querySelector(`button[data-key = ${keyCode}]`);
+  keyButton.classList.remove('playing');
+  }
+})
+
+
 
 function appendNumber(value){
   result.value+=value;
-  if(operator === '') {
+  if (operator === '') {
     num1 = Number(result.value);
-  }else {
+  }else{
     num2 = Number(result.value)
   }
 }
@@ -17,7 +64,6 @@ function appendNumber(value){
 function appendOperator(val) {
   equal();
   operator = val;
-  console.log(operator);
   result.value = '';
 }
 
@@ -33,12 +79,12 @@ function resetCalc() {
 }
 
 function equal() {
-  if(num1,num2 !== null) {
+  if (num1,num2 !== null) {
     let answer = operate(num1,num2,operator);
-  console.log(answer)
-  result.value = answer;
-  num1 = result.value;
-  num2 = 0;
+    console.log(answer)
+    result.value = answer;
+    num1 = result.value;
+    num2 = 0;
   }
 }
 
