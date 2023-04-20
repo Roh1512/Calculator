@@ -134,10 +134,10 @@ function operate(n1,n2,op){
 }
 
 function add(x,y) {
-  return x + y;
+  return ((x * 10) + (y * 10)) / 10;
 }
 function substract(x,y){
-  return x - y;
+  return ((x * 10) - (y * 10)) / 10;
 }
 function multiply(x,y){
   return x * y;
