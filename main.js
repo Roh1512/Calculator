@@ -140,12 +140,12 @@ function substract(x,y){
   return ((x * 10) - (y * 10)) / 10;
 }
 function multiply(x,y){
-  return x * y;
+  return (x * y).toFixed(2);
 }
 function division(x,y) {
   if(y === 0) {
     return "Undefined";
   }else {
-    return (x*10) / (y*10);
+    return ((x*10) / (y*10)).toFixed(2);
   }
 }
