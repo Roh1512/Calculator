@@ -89,6 +89,7 @@ body{
 .calculatorBody .topScreen button:hover {
     transform: scale3d(1.1,1.1,1.1);
     transition: 0.4s;
+    cursor: pointer;
 }
 .calculatorBody .topScreen button:active {
     transform: scale3d(0.8, 0.8, 0.8);
@@ -116,6 +117,7 @@ body{
 .keypad button:hover {
     transform: scale3d(1.1,1.1,1.1);
     transition: 0.3s;
+    cursor: pointer;
 }
 .keypad button:active {
     transform: scale3d(0.8,0.8,0.8);
