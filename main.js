@@ -81,7 +81,11 @@ function appendOperator(val) {
 }
 
 function appendDecimal(value) {
-  result.value += value;
+  if(result.value.includes('.')){
+    return
+  }else {
+    result.value += value;
+  }
 }
 
 function resetCalc() {
@@ -134,18 +138,18 @@ function operate(n1,n2,op){
 }
 
 function add(x,y) {
-  return ((x * 10) + (y * 10)) / 10;
+  return ((((x * 10) + (y * 10)) / 10).toFixed(3));
 }
 function substract(x,y){
-  return ((x * 10) - (y * 10)) / 10;
+  return (((x * 10) - (y * 10)) / 10).toFixed(3);
 }
 function multiply(x,y){
-  return (x * y).toFixed(2);
+  return (x * y).toFixed(3);
 }
 function division(x,y) {
   if(y === 0) {
     return "Undefined";
   }else {
-    return ((x*10) / (y*10)).toFixed(2);
+    return ((x*10) / (y*10)).toFixed(3);
   }
 }
