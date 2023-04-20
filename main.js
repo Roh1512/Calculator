@@ -146,6 +146,6 @@ function division(x,y) {
   if(y === 0) {
     return "Undefined";
   }else {
-    return x / y;
+    return (x*10) / (y*10);
   }
 }
