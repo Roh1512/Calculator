@@ -14,40 +14,60 @@ body{
     display: flex;
     flex-direction: column;
     width: 400px;
-    height: 400px;
     background-color: rgb(0, 0, 0);
     padding: 1rem;
     border-radius: 10px;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 .calculatorBody .topScreen {
     border: 1px solid black;
     display: flex;
+    width: 100%;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 10px;
-    padding: 10px;
-    background-color: rgb(57, 57, 57);
+    background-color: rgb(0, 0, 0);
 }
-.calculatorBody .topScreen input {
-    width: 80%;
+.calculatorBody .topScreen .input {
+    background-color: rgb(57, 57, 57);
+    width: 105%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.calculatorBody .topScreen .input input {
+    width: 100%;
     text-align: right;
     font-size: 40px;
+    height: 70px;
     border-radius: 5px;
-    margin-right: 10px;
     background: green;
 
 }
+
+.calculatorBody .topScreen .mainBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.calculatorBody .topScreen .mainBtn .del{
+    background-color: rgb(21, 21, 122);
+    color: rgb(197, 199, 199);
+}
 .calculatorBody .topScreen button {
     padding: 10px;
-    width: 60px;
-    height: 60px;
+    width: 45%;
+    height: 50px;
     font-size: 40px;
     background: rgb(105, 3, 3);
     color: aliceblue;
-    -webkit-box-shadow: 0px 0px 5px 2px rgba(110, 67, 110, 1);
-        -moz-box-shadow: 0px 0px 5px 2px rgba(110, 67, 110, 1);
-        box-shadow: 0px 0px 5px 2px rgba(110, 67, 110, 1);
+    -webkit-box-shadow: 0px 0px 5px 2px rgb(105, 3, 3);
+        -moz-box-shadow: 0px 0px 5px 2px rgb(105, 3, 3);
+        box-shadow: 0px 0px 5px 2px rgb(105, 3, 3);
     font-weight: 700;
     text-align: center;
     display: flex;
@@ -56,7 +76,7 @@ body{
     border-radius: 10px;
 }
 .calculatorBody .topScreen button:hover {
-    transform: scale3d(1.2,1.2,1.2);
+    transform: scale3d(1.1,1.1,1.1);
     transition: 0.4s;
 }
 .calculatorBody .topScreen button:active {
@@ -69,17 +89,17 @@ body{
 .keypad {
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 20px;
+    gap: 1rem;
     width: 100%;
 }
 
 .keypad button {
     padding: 5px;
     font-size: 2rem;
-    background: rgb(190, 190, 190);
-    -webkit-box-shadow: -3px -5px 8px 3px rgb(61, 60, 61);
-    -moz-box-shadow: -3px -5px 8px 3px rgb(80, 79, 80);
-    box-shadow: -3px -5px 8px 3px rgb(76, 72, 76);
+    background: rgb(175, 175, 175);
+    -webkit-box-shadow: -3px -5px 8px 3px rgb(79, 79, 79);
+    -moz-box-shadow: -3px -5px 8px 3px rgb(216, 216, 216);
+    box-shadow: -1px -3px 4px 1px rgb(82, 82, 82);
 }
 
 .keypad button:hover {

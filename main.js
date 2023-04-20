@@ -1,4 +1,5 @@
-  let num1 = null;
+//Variables for Numbers and operator
+let num1 = null;
 let num2 = null;
 let operator = '';
 
@@ -15,8 +16,10 @@ window.addEventListener('keydown', (e) => {
     equal();
   }else if (key === '.') {
     appendDecimal(key);
-  }else if (key === 'Backspace'){
+  }else if (key === 'Delete'){
     resetCalc();
+  }else if(key === 'Backspace'){
+    backSpace();
   }
 
   if(e.shiftKey && e.code === 'Digit8'){
@@ -95,6 +98,11 @@ function equal() {
     num1 = result.value;
     num2 = 0;
   }
+}
+
+function backSpace() {
+  let inputValue = result.value;
+  result.value = inputValue.substring(0,inputValue.length - 1);
 }
 
 
